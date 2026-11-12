@@ -1,0 +1,453 @@
+:root {
+    /* variables de colores */
+    --Color-gris-oscuro: #2c2c2c; /* Define el color gris oscuro */
+    --Color-gris-medio: #b3b3b3; /* Define el color gris medio */
+    --Color-gris-claro: #f2f2f2; /* Define el color gris claro */
+    --Color-bnaco-neutro: white; /* Define el color blanco neutro */
+    --Color-rojo-intenso: #c70039; /* Define un rojo intenso */
+    --Color-rojo-oscuro: #900c3f; /* Define un rojo oscuro */
+    --Color-negro-profundo: #000; /* Define el color negro profundo */
+}
+
+* {
+    margin: 0; /* Elimina los márgenes de todos los elementos */
+    padding: 0; /* Elimina el relleno de todos los elementos */
+    box-sizing: border-box; /* Hace que el ancho y alto incluyan el borde y el relleno */
+}
+
+html {
+    font-size: 62.5%; /* Establece el tamaño base de la fuente al 62.5% para facilitar los cálculos con rem */
+}
+
+body {
+    font-family: sans-serif, arial, Helvetica; /* Define la fuente del cuerpo */
+    background-color: var(--Color-gris-medio); /* Establece el color de fondo del cuerpo como gris medio */
+}
+
+header nav {
+    display: flex; /* Utiliza flexbox para alinear los elementos del nav */
+    height: 12rem; /* Define la altura del nav */
+    justify-content: space-between; /* Coloca los elementos a los extremos del contenedor */
+    align-items: center; /* Alinea los elementos verticalmente en el centro */
+    background: linear-gradient(to bottom, #000, #2c2c2c); /* Fondo con un gradiente de negro a gris oscuro */
+    box-shadow: #1e1d1d 1rem; /* Aplica una sombra alrededor del nav */
+    padding: 0.8rem; /* Añade un poco de espacio interno */
+}
+
+nav a {
+    color: var(--Color-gris-claro); /* Establece el color de los enlaces en gris claro */
+    padding: 2.4rem 1.2rem; /* Añade un relleno a los enlaces */
+    font-size: 1.5rem; /* Define el tamaño de la fuente */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+.menu-logo {
+    width: 9.5rem; /* Define el tamaño de la imagen del logo */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre la imagen */
+    object-fit: cover; /* Asegura que la imagen no se distorsione */
+    border: 0.2rem solid #ccc; /* Añade un borde alrededor del logo */
+    margin-left: 1.5rem; /* Añade espacio a la izquierda */
+}
+
+.menu {
+    display: flex; /* Utiliza flexbox para los elementos dentro del menú */
+    gap: 1rem; /* Espacio entre los enlaces */
+    margin-right: 1.5rem; /* Espacio a la derecha */
+}
+
+.menu a {
+    color: var(--Color-gris-claro); /* Color de texto para los enlaces */
+    padding: 0.8rem 1.5rem; /* Relleno de los enlaces */
+    font-size: 1.5rem; /* Tamaño de la fuente */
+    text-decoration: none; /* Elimina el subrayado */
+    border-radius: 1.5rem; /* Bordes redondeados en los enlaces */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave en el cambio de fondo y color */
+}
+
+nav a:hover {
+    background-color: var(--Color-negro-profundo); /* Cambia el fondo cuando se pasa el cursor */
+    color: var(--Color-bnaco-neutro); /* Cambia el color a blanco al pasar el cursor */
+}
+
+.ultimomodelo {
+    background-image: url('../images/Carroa.jpg'); /* Define una imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: 100%; /* El ancho será 100% del contenedor */
+    height: 45rem; /* Define la altura */
+    position: relative;
+}
+
+.ultimomodelo h1 {
+    position: absolute;
+    display: flex; /* Usa flexbox para alinear el texto */
+    justify-content: center; /* Centra el texto horizontalmente */
+    position: absolute; /* Coloca el h1 en una posición absoluta */
+    top: 40%; /* Coloca el texto en el 40% de la altura */
+    left: 55%; /* Centra el texto horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    font-size: 4rem; /* Tamaño de la fuente */
+    color: white; /* Color blanco */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Añade una sombra al texto */
+    text-align: center; /* Centra el texto */
+}
+
+.ultimomodelo img {
+    justify-content: center; /* Centra la imagen */
+    position: absolute; /* Posiciona la imagen de manera absoluta */
+    top: 30%; /* Ajusta la posición vertical de la imagen */
+    left: 42%; /* Ajusta la posición horizontal de la imagen */
+    align-items: center; /* Centra verticalmente */
+    width: 12rem; /* Define el tamaño de la imagen */
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Añade sombra */
+    cursor: pointer; /* Cambia el cursor cuando se pasa sobre la imagen */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .menu a {
+        text-align: center;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .ultimomodelo h1 {
+        font-size: 3rem;
+    }
+
+    .ultimomodelo img {
+        width: 8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-logo {
+        width: 6rem;
+    }
+
+    .menu a {
+        font-size: 1.3rem;
+    }
+
+    .ultimomodelo h1 {
+        font-size: 2.5rem;
+    }
+
+    .ultimomodelo img {
+        width: 6rem;
+        position: rela;
+    }
+}
+
+#contenido {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los artículos se ajusten en diferentes filas */
+    justify-content: center; /* Centra los artículos */
+    gap: 2rem; /* Espacio uniforme entre los artículos */
+    margin: 2rem auto;
+    max-width: 90%;
+}
+
+article {
+    flex: 1 1 45%; /* Se ajusta al 45% del contenedor */
+    max-width: 500px; /* Controla el ancho máximo */
+    background-color: white;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    border: 1px solid #ddd;
+    text-align: center; /* Centra el texto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+#contenido {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los artículos se ajusten en diferentes filas */
+    justify-content: center; /* Centra los artículos */
+    gap: 2rem; /* Espacio uniforme entre los artículos */
+    margin: 2rem auto;
+    max-width: 90%;
+}
+
+article {
+    flex: 1 1 45%; /* Se ajusta al 45% del contenedor */
+    max-width: 500px; /* Controla el ancho máximo */
+    background-color: white;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    border: 1px solid #ddd;
+    text-align: center; /* Centra el texto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+article .titulo {
+    font-size: 2rem; /* Aumenta el tamaño del título */
+    font-weight: bold;
+    color: #333; /* Color oscuro para mejor contraste */
+    margin-bottom: 0.5rem;
+    text-align: center;
+    display: flex; /* Hace que los elementos dentro del h2 se alineen en línea */
+    align-items: center; /* Centra verticalmente el texto y la imagen */
+    justify-content: center; /* Asegura que todo se centre dentro del título */
+}
+
+article .titulo img {
+    width: 40px;
+    height: auto;
+    margin-left: 25px; /* Espacio entre el texto y la imagen */
+    border: var(--Color-gris-oscuro);
+    cursor: pointer;
+}
+
+
+article .state {
+    font-size: 1.2rem; /* Más grande y legible */
+    color: #666;
+    font-style: italic;
+}
+
+article .info {
+    font-size: 1.4rem; /* Hace el texto más fácil de leer */
+    color: #444;
+    line-height: 1.6; /* Mejor separación entre líneas */
+    font-weight: 500;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.8rem;
+    margin: 1.5rem 0;
+}
+
+
+/* Testimonios */
+.testimonials {
+    background: var(--Color-bnaco-neutro); /* Fondo blanco neutro */
+    padding: 4rem 2rem; /* Relleno */
+    text-align: center; /* Alinea el texto al centro */
+}
+
+.testimonials-title {
+    font-size: 2.5rem; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    color: #333; /* Color oscuro */
+    margin-bottom: 2rem; /* Espacio inferior */
+}
+
+.testimonial-container {
+    display: grid; /* Utiliza grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crea columnas adaptables */
+    gap: 2rem; /* Espacio entre las tarjetas */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+.testimonial-card {
+    background: #fff; /* Fondo blanco */
+    border: 2px solid #ccc; /* Borde gris */
+    border-radius: 1rem; /* Bordes redondeados */
+    padding: 2rem; /* Relleno */
+    text-align: center; /* Alineación centrada */
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.testimonial-card h3 {
+    font-size: 1.5rem; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    color: #333; /* Color oscuro */
+}
+
+.testimonial-card p {
+    font-size: 1.5rem; /* Tamaño de la fuente */
+    color: #666; /* Color gris */
+    font-style: italic; /* Cursiva */
+}
+
+
+.testimonial-card:hover {
+    transform: translateY(-10px); /* Efecto de elevación */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1.5rem;
+    
+}
+
+.testimonial-author {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #222;
+}
+
+/* Asegurarse de que la sección sea adaptable */
+@media (max-width: 768px) {
+    .testimonials {
+        padding: 2rem 1rem;
+    }
+
+    .testimonials-title {
+        font-size: 2rem;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #contenido {
+        flex-direction: column;
+        max-width: 95%;
+    }
+
+    article {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .sidebar {
+        margin-bottom: 2rem;
+    }
+}
+
+    
+           /* Footer General */
+/* Estilo para el pie de página */
+footer {
+    background: linear-gradient(to top, #000, #2c2c2c); /* Fondo degradado de negro a gris */
+    color: var(--Color-bnaco-neutro); /* Texto en blanco para alto contraste */
+    padding: 2rem 0; /* Espaciado vertical */
+    font-family: 'Arial', sans-serif; /* Tipografía moderna y legible */
+    font-size: 1.4rem; /* Tamaño base de texto */
+    bottom: 0; /* Asegura que esté siempre en la parte inferior */
+    left: 0; /* Se alinea al borde izquierdo */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    margin-top: auto; /* Posiciona el footer al final */
+}
+
+/* Contenedor del pie de página */
+.footer-container {
+    max-width: 120rem; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en dispositivos pequeños */
+    justify-content: space-between; /* Espacia uniformemente los elementos */
+    align-items: center;
+    padding: 0 2rem; /* Margen interno en los laterales */
+}
+
+/* Logo del footer */
+.footer-logo-img {
+    width: 12rem; /* Tamaño ajustable para un logo proporcional */
+    height: auto;
+    filter: grayscale(100%); /* Estilo monocromático profesional */
+    border-radius: 50%; /* Hace el logo circular */
+}
+
+.footer-logo-img:hover {
+    filter: grayscale(0); /* Recupera los colores al pasar el ratón */
+    cursor: pointer; /* Cambia el cursor a mano */
+}
+
+/* Enlaces del pie de página */
+.footer-links {
+    display: flex;
+    gap: 2rem; /* Espaciado uniforme entre enlaces */
+}
+
+.footer-links a {
+    color: var(--Color-bnaco-neutro); /* Color gris claro para elegancia */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1.5rem; /* Tamaño ligeramente más grande para enlaces */
+    transition: color 0.3s ease; /* Animación de color al interactuar */
+}
+
+.footer-links a:hover {
+    color: var(--Color-gris-oscuro); /* Gris oscuro para los enlaces al pasar el ratón */
+}
+
+/* Iconos sociales */
+.footer-socials {
+    display: flex;
+    gap: 1.5rem; /* Espaciado entre iconos */
+    padding: 1rem; /* Espaciado interno de los iconos */
+}
+
+.social-icon {
+    width: 3rem; /* Tamaño de los iconos */
+    height: 3rem;
+    color: var(--Color-negro-profundo); /* Color inicial negro */
+    border-radius: 50%; /* Iconos redondeados */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave de color y escala */
+}
+
+.social-icon:hover {
+    color: var(--Color-gris-medio); /* Gris medio al pasar el ratón */
+    transform: scale(1.2); /* Efecto de agrandamiento */
+}
+
+/* Información legal */
+.footer-legal {
+    text-align: center; /* Centra el texto */
+    font-size: 1.2rem; /* Texto más pequeño para detalles legales */
+    color: var(--Color-gris-medio); /* Gris tenue */
+}
+
+.footer-legal a {
+    color: var(--Color-gris-claro); /* Color gris claro para los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.footer-legal a:hover {
+    color: var(--Color-gris-medio); /* Cambia el color al pasar el ratón */
+}
+
+/* Diseño adaptable para pantallas pequeñas */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Coloca los elementos en una columna */
+        text-align: center; /* Alinea todo al centro */
+    }
+
+    .footer-links {
+        flex-direction: column; /* Los enlaces se colocan en una columna */
+        gap: 1.5rem; /* Reduce el espacio entre los enlaces */
+    }
+
+    .footer-logo-img {
+        margin-bottom: 1.5rem; /* Espaciado inferior del logo */
+    }
+}
